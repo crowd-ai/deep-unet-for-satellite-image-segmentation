@@ -4,6 +4,7 @@ import datetime
 from unet_model import *
 from gen_patches import *
 
+import os
 import os.path
 import numpy as np
 import tifffile as tiff
@@ -28,6 +29,10 @@ PATCH_SZ = 160  # should divide by 16
 BATCH_SIZE = 150
 TRAIN_SZ = 4000  # train size
 VAL_SZ = 1000  # validation size
+
+
+print('Some information about environment:')
+os.system('lscpu')
 
 
 def get_model():
