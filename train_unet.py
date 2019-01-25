@@ -115,7 +115,7 @@ if __name__ == "__main__":
         csvfpath = (
             f"log_unet_{now.year}-{now.month}-{now.day}-{now.hour}:{now.minute}.csv"
         )
-        csv_logger = CSVLogger(csvfpath, append=True, separator=";")
+        csv_logger = CustomCSVLoggerCallback(csvfpath, append=True, separator=";")
         tensorboard = TensorBoard(
             log_dir="./tensorboard_unet/", write_graph=True, write_images=True
         )
