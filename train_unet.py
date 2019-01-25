@@ -23,12 +23,12 @@ def normalize(img):
 N_BANDS = 8
 N_CLASSES = 5  # buildings, roads, trees, crops and water
 CLASS_WEIGHTS = [0.2, 0.3, 0.1, 0.1, 0.3]
-N_EPOCHS = 150
+N_EPOCHS = 100
 UPCONV = True
 PATCH_SZ = 160  # should divide by 16
-BATCH_SIZE = 150
-TRAIN_SZ = 4000  # train size
-VAL_SZ = 1000  # validation size
+BATCH_SIZE = 10
+TRAIN_SZ = 500  # train size
+VAL_SZ = 100  # validation size
 
 
 print('Some information about environment:')
@@ -124,7 +124,7 @@ if __name__ == "__main__":
             y_train,
             batch_size=BATCH_SIZE,
             epochs=N_EPOCHS,
-            verbose=2,
+            verbose=1,
             shuffle=True,
             callbacks=[model_checkpoint, csv_logger, tensorboard],
             validation_data=(x_val, y_val),
