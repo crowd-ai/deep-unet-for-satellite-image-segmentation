@@ -1,0 +1,4 @@
+#PBS -l nodes=1:ppn=1
+cd $PBS_O_WORKDIR
+python -m pip install -r requirements.txt --user
+python train_uneti_long.py
